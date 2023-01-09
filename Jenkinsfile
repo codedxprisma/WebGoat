@@ -5,9 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 withCredentials([
-                    string(credentialsId: 'codedx-api-key', variable: 'API_KEY'),
-                    string(credentialsId: 'codedx-url', variable: 'CODEDX_URL'),
-                    string(credentialsId: 'codedx-project-id', variable: 'PROJECT_ID')
+                    string(credentialsId: 'API_KEY', variable: 'API_KEY'),
+                    string(credentialsId: 'CODEDX_URL', variable: 'CODEDX_URL'),
+                    string(credentialsId: 'PROJECT_ID', variable: 'PROJECT_ID')
                 ]) {
                     step([
                         $class: 'CodeDxPublisher',
