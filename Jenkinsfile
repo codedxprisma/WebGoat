@@ -17,7 +17,7 @@ pipeline {
                         selfSignedCertificateFingerprint: '',
                         sourceAndBinaryFiles: '**',
                         url: "${CODEDX_URL}",
-                        targetBranchName: "${BRANCH_NAME}",
+                        targetBranchName: '${BRANCH_NAME}',
                         baseBranchName: 'main'
                     ])
                 }
