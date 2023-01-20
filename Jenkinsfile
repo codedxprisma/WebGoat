@@ -15,10 +15,19 @@ pipeline {
                         key: "${API_KEY}",
                         projectId: "${PROJECT_ID}",
                         selfSignedCertificateFingerprint: '',
-                        sourceAndBinaryFiles: '**',
+                        sourceAndBinaryFiles: '',
                         url: "${CODEDX_URL}",
                         targetBranchName: '${BRANCH_NAME}',
-                        baseBranchName: 'main'
+                        baseBranchName: 'main',
+                        gitFetchConfiguration: [specificBranch: '${BRANCH_NAME}'],
+                        analysisResultConfiguration: [
+                            failureOnlyNew: false,
+                            failureSeverity: 'None',
+                            numBuildsInGraph: 0,
+                            policyBreakBuildBehavior: 'MarkFailed',
+                            unstableOnlyNew: false,
+                            unstableSeverity: 'None'
+                        ]
                     ])
                 }
             }
