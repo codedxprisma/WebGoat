@@ -15,7 +15,7 @@ pipeline {
                         key: "${API_KEY}",
                         projectId: "${PROJECT_ID}",
                         selfSignedCertificateFingerprint: '',
-                        sourceAndBinaryFiles: '**',
+                        sourceAndBinaryFiles: '',
                         url: "${CODEDX_URL}",
                         targetBranchName: '${BRANCH_NAME}',
                         baseBranchName: 'main',
