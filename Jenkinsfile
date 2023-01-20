@@ -19,7 +19,15 @@ pipeline {
                         url: "${CODEDX_URL}",
                         targetBranchName: '${BRANCH_NAME}',
                         baseBranchName: 'main',
-                        gitFetchConfiguration: [specificBranch: '${BRANCH_NAME}']
+                        gitFetchConfiguration: [specificBranch: '${BRANCH_NAME}'],
+                        analysisResultConfiguration: [
+                            failureOnlyNew: false,
+                            failureSeverity: 'None',
+                            numBuildsInGraph: 0,
+                            policyBreakBuildBehavior: 'MarkFailed',
+                            unstableOnlyNew: false,
+                            unstableSeverity: 'None'
+                        ]
                     ])
                 }
             }
