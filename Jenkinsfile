@@ -18,7 +18,8 @@ pipeline {
                         sourceAndBinaryFiles: '**',
                         url: "${CODEDX_URL}",
                         targetBranchName: '${BRANCH_NAME}',
-                        baseBranchName: 'main'
+                        baseBranchName: 'main',
+                        gitFetchConfiguration: [specificBranch: '${BRANCH_NAME}']
                     ])
                 }
             }
